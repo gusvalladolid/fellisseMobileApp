@@ -15,12 +15,10 @@ const Login = ({ navigation }) => {
     try {
       const response = await logIn(username, password)
       console.log(response);
-      navigation.navigate('HomeScreen');
+      navigation.navigate('HomeScreen', {username});
     } catch (error) {
       console.log(error);
     }
-    console.log('Email:', username);
-    console.log('Password:', password);
   };
 
   return (

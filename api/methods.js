@@ -8,7 +8,6 @@ const register = async (username, password) => {
     });
     
     if (response.data === false) {
-      console.log(response);
       throw new Error("Registration failed. Please check your input.");
     }
 
@@ -16,7 +15,6 @@ const register = async (username, password) => {
     return response.data;
   } catch (error) {
     console.error(error);
-    // You can choose to handle the error or rethrow it as needed
     throw error;
   }
 };
@@ -26,7 +24,6 @@ const logIn = async (username, password) => {
     const response = await axios.post(`${baseUrl}/login`, {
       username, password
     });
-    console.log(response.data)
     if (response.data === false) {
       throw new Error("Log In failed. Please check your input.");
     }
@@ -35,7 +32,6 @@ const logIn = async (username, password) => {
     return response.data;
   } catch (error) {
     console.error(error);
-    // You can choose to handle the error or rethrow it as needed
     throw error;
   }
 }
